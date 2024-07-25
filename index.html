@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="captcha">
+            <strike><h1 id="captchagenerator">generate captcha</h1></strike>
+            <button id="generate">Generate</button>
+        </div>
+        <div class="content">
+            <input type="text" id="inputbox">
+            <button id="verify">Verify</button>
+        </div>
+    </div>
+    <script>
+        var captchagenerator = document.getElementById("captchagenerator");
+        var generate = document.getElementById("generate");
+        var inputbox = document.getElementById("inputbox");
+        var verify = document.getElementById("verify");
+
+        // Function to generate captcha
+        function generateCaptcha() {
+            const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890@#$%&*^!*";
+            let result = '';
+            var characterLength = characters.length;
+            for (var count = 1; count <= 7; count++) {
+                result += characters.charAt(Math.floor(Math.random() * characterLength));
+            }
+            captchagenerator.textContent = result;
+        }
+
+        document.addEventListener("DOMContentLoaded", generateCaptcha);
+
+        generate.addEventListener("click", generateCaptcha);
+
+        verify.addEventListener("click", function () {
+            var input = inputbox.value;
+            console.log(captchagenerator.textContent, "hello");
+            if (input === captchagenerator.textContent) {
+                alert("Captcha Submit Successfully")
+            } else {
+                alert("Please Try Again")
+            }
+        });
+    </script>
+</body>
+
+</html>
