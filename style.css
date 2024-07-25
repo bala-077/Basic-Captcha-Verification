@@ -41,8 +41,8 @@ body{
     display: flex;
 }
 .content input{
-    flex-grow: 1;
     padding: 10px;
+    width: 90%;
     border: none;
     font-size: 19px;
     outline: none;
@@ -59,10 +59,15 @@ body{
 }
 
 @media screen and (max-width:500px) {
+    body{
+        height: 70vh;
+    }
     .container{
         width: 100%;    
+        width: 80%;
         border-radius: 20px;
         box-shadow: none;
+        background-color: bisque;
     }
     
 }
