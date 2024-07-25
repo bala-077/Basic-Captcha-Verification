@@ -20,6 +20,9 @@ body{
     padding: 5%;
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
+.container .h1{
+    color: blue;
+}
 .captcha{
     width: 100%;
     border-radius: 20px;
@@ -61,6 +64,9 @@ body{
 @media screen and (max-width:500px) {
     body{
         height: 70vh;
+    }
+    .container .h1{
+        color: red;
     }
     .container{
         width: 100%;    
